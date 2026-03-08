@@ -22,6 +22,13 @@ Indice:
 
 #### 1.1 Descripción
 
+En este nuevo laboratorio se realizó el diseño e implementación de un sumador de 4 bits utilizando el lenguaje de descripción de hardware Verilog. Para comenzar, se utilizó un esquema proporcionado por el docente, el cual mostraba la estructura general del circuito y la forma en que se conectan varios sumadores de 1 bit para construir un sumador de mayor capacidad.
+
+El sumador de 4 bits permite realizar la suma de dos números binarios de 4 bits, generando como resultado cuatro bits de suma y un posible acarreo de salida (Cout). Este funcionamiento se logra conectando varios sumadores de 1 bit en cascada, donde el acarreo de salida de una etapa se utiliza como acarreo de entrada en la siguiente etapa.
+
+Posteriormente, el diseño fue probado mediante simulación utilizando el simulador Icarus Verilog, verificando el comportamiento del circuito con diferentes combinaciones de entradas. Finalmente, después de comprobar su correcto funcionamiento en la simulación, se procedió a realizar la implementación del sumador de 4 bits para validar su operación en la práctica.
+
+Si quieres, también puedo hacerte una versión más corta (5–6 líneas) que muchos profesores prefieren en los informes de laboratorio.
 #### 1.2 Diagramas
 
 
@@ -35,6 +42,7 @@ Indice:
 
 
 ## Evidencias de implementación
+<img width="310" height="191" alt="image" src="https://github.com/user-attachments/assets/f8f41a1a-03d7-4819-b2ab-dec90e9338ed" />
 
 
 ## Conclusiones

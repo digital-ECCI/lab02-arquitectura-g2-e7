@@ -30,7 +30,39 @@ Posteriormente, el diseño fue probado mediante simulación utilizando el simula
 
 Si quieres, también puedo hacerte una versión más corta (5–6 líneas) que muchos profesores prefieren en los informes de laboratorio.
 #### 1.2 Diagramas
+<img width="1199" height="450" alt="image" src="https://github.com/user-attachments/assets/87bca2b5-6d05-46f2-9713-f77d0624e3d8" />
 
+# Sumador Completo de 4 Bits (Ripple Carry Adder)
+
+Este repositorio contiene el esquema lógico de un **Sumador de 4 bits con propagación de acarreo** construido mediante compuertas lógicas discretas.
+
+##  Descripción General
+
+El circuito es capaz de sumar dos números binarios de 4 bits cada uno, produciendo una suma de 4 bits y un bit de acarreo de salida. El diseño se basa en la conexión en cascada de cuatro **Sumadores Completos** (Full Adders) de 1 bit.
+
+##  Entradas y Salidas
+
+### Entradas:
+* **A [A3:A0]:** Primer operando de 4 bits. `A0` es el bit menos significativo (LSB) y `A3` es el más significativo (MSB).
+* **B [B3:B0]:** Segundo operando de 4 bits.
+* **Ci (Carry In):** Acarreo de entrada inicial. Normalmente se conecta a `0` para una suma estándar, pero permite encadenar este módulo con otros sumadores para operar con más bits.
+
+### Salidas:
+* **S [S3:S0]:** Resultado de la suma de 4 bits.
+* **Co (Carry Out):** Acarreo de salida final. Indica si hubo un desbordamiento (overflow) al sumar los bits más significativos.
+
+##  Lógica del Circuito (Por Etapa)
+
+Cada bit individual utiliza un Sumador Completo estándar compuesto por:
+* **2 Compuertas XOR:** Calculan la suma de los bits de entrada y el acarreo previo (`A XOR B XOR C_in`).
+* **2 Compuertas AND y 1 Compuerta OR:** Calculan el acarreo de salida hacia la siguiente etapa. El acarreo se activa si dos o más de las entradas (`A`, `B`, o `C_in`) son `1`.
+
+## ⚙️ Funcionamiento (Propagación de Acarreo)
+
+El comportamiento de este circuito se caracteriza por el efecto "Ripple" o propagación:
+1. La primera etapa (derecha) suma `A0`, `B0` y `Ci`, produciendo el bit de suma `S0` y un acarreo intermedio.
+2. Este acarreo viaja a la siguiente etapa actuando como entrada para la suma de `A1` y `B1`.
+3. El proceso se propaga secuencialmente hasta llegar a la última etapa (`A3`, `B3`), la cual genera la suma final `S3` y el acarreo de salida `Co`.
 
 ## Simulaciones 
 

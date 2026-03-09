@@ -1,9 +1,13 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Px-uYaj2)
+<img width="1600" height="623" alt="image" src="https://github.com/user-attachments/assets/0b73ec01-1223-44eb-9594-7a12a6e3b3d6" />[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Px-uYaj2)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22891300&assignment_repo_type=AssignmentRepo)
 # Lab02 - Sumador/Restador de 4 bits
 
 # Integrantes
+Daniel Buenhombre
 
+Sergio Caicedo
+
+Santiago Muñoz
 
 # Informe
 
@@ -67,10 +71,17 @@ El comportamiento de este circuito se caracteriza por el efecto "Ripple" o propa
 ## Simulaciones 
 
 ### 1. Simulación del sumador/restador
+<img width="1600" height="623" alt="image" src="https://github.com/user-attachments/assets/c27683c3-deb6-4dca-86cf-1276b6340f9b" />
+
 
 #### 1.1 Descripción
 
+un sumador de 4 bits descrito en Verilog, visualizado a través del analizador GTKWave. A diferencia del diseño de un solo bit, esta simulación opera con buses de datos (A[3:0], B[3:0], S[3:0]) representados en formato hexadecimal para agilizar su análisis. La presencia de las señales internas de acarreo (c0, c1, c2) evidencia la implementación de una arquitectura de tipo Ripple-Carry (sumador de propagación de acarreo), donde cuatro sumadores completos se conectan en cascada. Al examinar el comportamiento de las ondas, se comprueba que el módulo realiza las operaciones aritméticas de manera exacta, destacando la correcta activación del acarreo de salida (Cout) en situaciones de desbordamiento continuo (por ejemplo, al sumar A=1 y B=F, que genera una salida S=0 y Cout=1); lo que confirma la funcionalidad integral del diseño estructural para su futura síntesis en un FPGA.
+
 #### 1.2 Diagrama
+
+<img width="1600" height="811" alt="image" src="https://github.com/user-attachments/assets/db5575aa-b293-48f9-bb77-3db419fcccf4" />
+
 
 
 ## Evidencias de implementación
@@ -79,5 +90,19 @@ El comportamiento de este circuito se caracteriza por el efecto "Ripple" o propa
 
 ## Conclusiones
 
+###Validación de la Lógica Base:
+
+La simulación del sumador completo de 1 bit confirmó que el diseño a nivel de compuertas lógicas (estructural) funciona correctamente. Las señales internas comprobaron que la lógica combinacional cumple con la tabla de verdad teórica sin presentar estados indefinidos.
+
+###Escalabilidad del Diseño: 
+
+La evolución hacia el sumador de 4 bits demostró el principio de modularidad en Verilog. La correcta propagación de las señales de acarreo internas (c0, c1, c2) confirma que la conexión en cascada de los módulos de 1 bit (arquitectura Ripple-Carry) se implementó con éxito.
+
+###Gestión de Desbordamiento:
+
+Las pruebas con buses de 4 bits (representados en formato hexadecimal) permitieron verificar que el sistema identifica y maneja los desbordamientos con precisión. La bandera de acarreo de salida (Cout) se activó en los momentos exactos en los que la suma aritmética superó la capacidad máxima de 4 bits (valor 15 o F).
+
+###Viabilidad para Hardware:
+El análisis de las formas de onda en GTKWave garantiza que el comportamiento del circuito descrito a nivel de transferencia de registros (RTL) es predecible y estable. Por lo tanto, el código Verilog validado está completamente listo para la fase de síntesis e implementación física en el FPGA.
 
 ## Referencias

@@ -103,3 +103,12 @@ Las pruebas con buses de 4 bits (representados en formato hexadecimal) permitier
 El análisis de las formas de onda en GTKWave garantiza que el comportamiento del circuito descrito a nivel de transferencia de registros (RTL) es predecible y estable. Por lo tanto, el código Verilog validado está completamente listo para la fase de síntesis e implementación física en el FPGA.
 
 ## Referencias
+## 📚 Referencias y Recursos
+
+**Bibliografía recomendada:**
+* Mano, M. M., & Ciletti, M. D. (2013). *Digital Design: With an Introduction to the Verilog HDL*. Pearson. (Excelente referencia para la teoría de sumadores y lógica combinacional).
+* Brown, S., & Vranesic, Z. (2014). *Fundamentals of Digital Logic with Verilog Design*. McGraw-Hill Education.
+
+**Herramientas y Documentación:**
+* **Icarus Verilog:** [http://iverilog.icarus.com/](http://iverilog.icarus.com/) - Documentación oficial del compilador y simulador.
+* **GTKWave:** [http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) - Manual de usuario del visor de formas de onda.

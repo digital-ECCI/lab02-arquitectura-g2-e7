@@ -90,19 +90,16 @@ un sumador de 4 bits descrito en Verilog, visualizado a través del analizador G
 
 ## Conclusiones
 
-###Validación de la Lógica Base:
-
+### Validación de la Lógica Base:
 La simulación del sumador completo de 1 bit confirmó que el diseño a nivel de compuertas lógicas (estructural) funciona correctamente. Las señales internas comprobaron que la lógica combinacional cumple con la tabla de verdad teórica sin presentar estados indefinidos.
 
-###Escalabilidad del Diseño: 
-
+### Escalabilidad del Diseño: 
 La evolución hacia el sumador de 4 bits demostró el principio de modularidad en Verilog. La correcta propagación de las señales de acarreo internas (c0, c1, c2) confirma que la conexión en cascada de los módulos de 1 bit (arquitectura Ripple-Carry) se implementó con éxito.
 
-###Gestión de Desbordamiento:
-
+### estión de Desbordamiento:
 Las pruebas con buses de 4 bits (representados en formato hexadecimal) permitieron verificar que el sistema identifica y maneja los desbordamientos con precisión. La bandera de acarreo de salida (Cout) se activó en los momentos exactos en los que la suma aritmética superó la capacidad máxima de 4 bits (valor 15 o F).
 
-###Viabilidad para Hardware:
+### Viabilidad para Hardware:
 El análisis de las formas de onda en GTKWave garantiza que el comportamiento del circuito descrito a nivel de transferencia de registros (RTL) es predecible y estable. Por lo tanto, el código Verilog validado está completamente listo para la fase de síntesis e implementación física en el FPGA.
 
 ## Referencias
